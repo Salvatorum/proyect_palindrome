@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e1dad3;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    width: 90%;
+    max-width: 600px;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#container_palin {
+    text-align: center;
+}
+
+h1 {
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+}
+
+.text {
+    display: block;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+#text-input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+#text-input:focus {
+    background-color: #f6fee887; /* Color de fondo cuando está enfocado */
+    outline: none; /* Quita el contorno predeterminado del navegador */
+    border-color: #cbfecd; /* Cambia el color del borde si lo deseas */
+    
+}
+
+#check-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#check-btn:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+.span_color {
+    color: #34be3b;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 95%;
+        padding: 1rem;
+    }
+}
+
