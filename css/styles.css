@@ -46,9 +46,9 @@ h1 {
     transition: background-color 0.3s ease;
 }
 #text-input:focus {
-    background-color: #f6fee887; /* Color de fondo cuando está enfocado */
-    outline: none; /* Quita el contorno predeterminado del navegador */
-    border-color: #cbfecd; /* Cambia el color del borde si lo deseas */
+    background-color: #f6fee887; 
+    outline: none; 
+    border-color: #cbfecd; 
     
 }
 
