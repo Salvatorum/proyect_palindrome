@@ -1,0 +1,25 @@
+name: CI - Constructor de Nginx
+
+# ¿Cuándo se ejecuta esto? Cada vez que hagas un "git push" a la rama main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  construir-y-probar:
+    # GitHub nos presta una máquina virtual con Ubuntu gratis
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 1: GitHub descarga tu código JS y tu Dockerfile
+      - name: Descargar el código del repo
+        uses: actions/checkout@v4
+
+      # Paso 2: Simula lo que hiciste vos en tu Thinkpad
+      - name: Construir la imagen de Docker de prueba
+        run: docker build -t app-palindrome:test .
+        
+      # Paso 3: Mensaje de éxito
+      - name: Confirmación
+        run: echo "✅ ¡La imagen se construyó correctamente en la nube!"
