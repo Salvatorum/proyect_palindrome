@@ -1,25 +1,25 @@
-name: CI - Constructor de Nginx
+name: CI/CD - Despliegue en Arch Linux
 
-# ¿Cuándo se ejecuta esto? Cada vez que hagas un "git push" a la rama main
 on:
   push:
     branches:
       - main
 
 jobs:
-  construir-y-probar:
-    # GitHub nos presta una máquina virtual con Ubuntu gratis
-    runs-on: ubuntu-latest
+  desplegar-en-local:
+    # ACÁ ESTÁ LA MAGIA: Le decimos a GitHub que envíe el trabajo a tu Thinkpad
+    runs-on: self-hosted
 
     steps:
-      # Paso 1: GitHub descarga tu código JS y tu Dockerfile
-      - name: Descargar el código del repo
+      - name: Descargar el código nuevo
         uses: actions/checkout@v4
 
-      # Paso 2: Simula lo que hiciste vos en tu Thinkpad
-      - name: Construir la imagen de Docker de prueba
-        run: docker build -t app-palindrome:test .
-        
-      # Paso 3: Mensaje de éxito
-      - name: Confirmación
-        run: echo "✅ ¡La imagen se construyó correctamente en la nube!"
+      - name: Construir la nueva imagen de Docker localmente
+        run: docker build -t app-palindrome:latest .
+
+      - name: Borrar el contenedor viejo (si existe)
+        # El "|| true" evita que tire error si es la primera vez que corre
+        run: docker rm -f mi-front-end || true
+
+      - name: Levantar la nueva versión actualizada
+        run: docker run -d -p 8080:80 --name mi-front-end app-palindrome:latest
