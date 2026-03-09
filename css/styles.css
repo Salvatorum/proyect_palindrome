@@ -45,6 +45,12 @@ h1 {
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
+#text-input:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+    cursor: pointer;
+}
+
 #text-input:focus {
     background-color: #f6fee887; 
     outline: none; 
