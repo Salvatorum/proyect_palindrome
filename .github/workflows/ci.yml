@@ -7,7 +7,6 @@ on:
 
 jobs:
   desplegar-en-local:
-    # ACÁ ESTÁ LA MAGIA: Le decimos a GitHub que envíe el trabajo a tu Thinkpad
     runs-on: self-hosted
 
     steps:
@@ -18,7 +17,6 @@ jobs:
         run: docker build -t app-palindrome:latest .
 
       - name: Borrar el contenedor viejo (si existe)
-        # El "|| true" evita que tire error si es la primera vez que corre
         run: docker rm -f mi-front-end || true
 
       - name: Levantar la nueva versión actualizada
