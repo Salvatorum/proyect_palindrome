@@ -20,6 +20,7 @@ main {
     background-color: #ffffff;
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 #container_palin {
@@ -44,6 +45,7 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 #text-input:hover {
     background-color: #e0e0e0;
@@ -52,9 +54,9 @@ h1 {
 }
 
 #text-input:focus {
-    background-color: #abcf6b87; 
+    background-color: #dbff9e87; 
     outline: none; 
-    border-color: #0d410e; 
+    border-color: #73ad74; 
     
 }
 
