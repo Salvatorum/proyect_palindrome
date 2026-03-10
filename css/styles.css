@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 main {
